@@ -2,6 +2,7 @@ const http = require("http");
 const cors = require("cors");
 const express = require("express");
 const socketIO = require("socket.io");
+const path=require("path");
 
 const PORT = process.env.PORT || 5000;
 
@@ -10,9 +11,12 @@ const USERS = [{}];
 const app = express();
 //inter communication between url's
 app.use(cors());
-
+app.use(express.static(path.join(__dirname,"./frontend/build")));
 app.get('/', (req, res) => {
 	res.send("It's working!");
+})
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname,"./frontend/build"));
 })
 
 const server = http.createServer(app);
