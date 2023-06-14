@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
       "client-install":"cd frontend && npm install",
-    "client-build":"cd frontend && npm run build"
+    "client-build":"cd frontend && npm run build",
 
   },
         "engineStrict": true,
